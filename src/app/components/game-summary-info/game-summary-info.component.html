@@ -1,0 +1,21 @@
+<br /><br />
+<h2>Data Version</h2>
+{{ singleGameSummaryBasicInfo.dataVersion }}<br /><br />
+<h2>match ID</h2>
+{{ singleGameSummaryBasicInfo.matchId }} <br /><br /><br /><br />
+
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Participants</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+      *ngFor="let singleParticipant of singleGameSummaryBasicInfo.participants"
+    >
+      <td>{{ singleParticipant }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<table class="table table-hover">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Summoner name</th>
+            <th>League Points</th>
+            <th>Wins</th>
+            <th>Losses</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tempChallengerPlayer of challengerPlayers">
+            <td>{{ tempChallengerPlayer.summonerName }}</td>
+            <td>{{ tempChallengerPlayer.leaguePoints }}</td>
+            <td>{{ tempChallengerPlayer.wins }}</td>
+            <td>{{ tempChallengerPlayer.losses }}</td>
+        </tr>
+    </tbody>
+
+</table>

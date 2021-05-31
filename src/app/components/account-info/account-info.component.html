@@ -1,0 +1,26 @@
+<br><br>
+<h2>ID</h2>{{ singleAccountInfo.id }}<br><br>
+<h2>Account ID</h2> {{ singleAccountInfo.accountId }} <br><br>
+<h2>Puuid</h2> {{ singleAccountInfo.puuid }} <br><br>
+<h2>Name</h2> {{ singleAccountInfo.name }} <br><br>
+<h2>Profile Icon ID</h2> {{ singleAccountInfo.profileIconId }} <br><br>
+<h2>Revision Date</h2> {{ singleAccountInfo.revisionDate }} <br><br>
+<h2>Summoner Level</h2> {{ singleAccountInfo.summonerLevel }} <br><br><br><br>
+
+<table class="table table-hover">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Matches History Games ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let singleGameId of matchHistory">
+            <a routerLink="/matchid/{{ singleGameId }}">
+                <td>{{  singleGameId }}</td>
+            </a>
+        </tr>
+    </tbody>
+
+</table>

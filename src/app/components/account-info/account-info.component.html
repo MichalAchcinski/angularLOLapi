@@ -16,9 +16,9 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let singleGameId of matchHistory">
+        <tr *ngFor="let singleGameId of matchHistory; let idx = index">
             <a routerLink="/matchid/{{ singleGameId }}">
-                <td>{{  singleGameId }}</td>
+                <td>Game {{ idx+1 }}</td>
             </a>
         </tr>
     </tbody>

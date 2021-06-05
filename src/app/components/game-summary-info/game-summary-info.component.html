@@ -1,21 +1,45 @@
 <br /><br />
 <h2>Data Version</h2>
-{{ singleGameSummaryBasicInfo.dataVersion }}<br /><br />
+{{ singleGameSummaryInfo.metadata?.dataVersion }}<br /><br />
 <h2>match ID</h2>
-{{ singleGameSummaryBasicInfo.matchId }} <br /><br /><br /><br />
+{{ singleGameSummaryInfo.metadata?.matchId }} <br /><br />
+<h2>game duration</h2>
+{{ singleGameSummaryInfo.info?.gameDuration/60000 }} minutes <br /><br />
+<h2>game type</h2>
+{{ singleGameSummaryInfo.info?.gameMode }}<br /><br /><br /><br />
+{{ G}}
 
 <table class="table table-hover">
   <thead class="table-dark">
     <tr>
-      <th>Participants</th>
+      <th>Champion</th>
+      <th>Nickname</th>
+      <th>Kills</th>
+      <th>Deaths</th>
+      <th>Assists</th>
+      <th>Win</th>
+      <th class="col-sm-3">Items</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr
-      *ngFor="let singleParticipant of singleGameSummaryBasicInfo.participants"
-    >
-      <td>{{ singleParticipant }}</td>
+    <tr *ngFor="let singlePlayer of singleGameSummaryInfo.info?.participants">
+      <td>
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/champion/{{ singlePlayer.championName }}.png" height="50" />
+      </td>
+      <td>{{ singlePlayer.summonerName }}</td>
+      <td>{{ singlePlayer.kills }}</td>
+      <td>{{ singlePlayer.deaths }}</td>
+      <td>{{ singlePlayer.assists }}</td>
+      <td>{{ singlePlayer.win }}</td>
+      <td>
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/item/{{ singlePlayer.item0 }}.png" height="50" *ngIf="singlePlayer.item0 != 0" />
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/item/{{ singlePlayer.item1 }}.png" height="50" *ngIf="singlePlayer.item1 != 0" />
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/item/{{ singlePlayer.item2 }}.png" height="50" *ngIf="singlePlayer.item2 != 0" />
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/item/{{ singlePlayer.item3 }}.png" height="50" *ngIf="singlePlayer.item3 != 0" />
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/item/{{ singlePlayer.item4 }}.png" height="50" *ngIf="singlePlayer.item4 != 0" />
+        <img src="https://ddragon.leagueoflegends.com/cdn/{{ gameVersion }}/img/item/{{ singlePlayer.item5 }}.png" height="50" *ngIf="singlePlayer.item5 != 0" />
+      </td>
     </tr>
   </tbody>
 </table>
